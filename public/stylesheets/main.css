@@ -1,0 +1,23 @@
+body {
+   background-color: #333355;
+   color: white;
+   font-family: fantasy, Arial, sans-serif;
+}
+a,a:visited {
+   color: #aaffaa;
+}
+.nautical-component {
+   border: 1px solid silver;
+   padding: 1em 2em;
+}
+#nautical_ocean {
+
+}
+#nautical_ship {
+   max-width: 50em;
+   min-width: 30em;
+}
+#nautical-bow {
+   padding: 0.25em 3em;
+   /*text-align: center;*/
+}
