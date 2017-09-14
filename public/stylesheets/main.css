@@ -3,8 +3,14 @@ body {
    color: white;
    font-family: fantasy, Arial, sans-serif;
 }
-a,a:visited {
+a, a:visited {
    color: #aaffaa;
+}
+a:hover, a:active, .btn:hover, .btn:active {
+   color: #ffffaa;
+}
+input, button {
+   color: black;
 }
 .nautical-component {
    border: 1px solid silver;
@@ -20,4 +26,7 @@ a,a:visited {
 #nautical-bow {
    padding: 0.25em 3em;
    /*text-align: center;*/
+}
+.game-form > div {
+   margin: 0.2em;
 }

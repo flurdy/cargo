@@ -1,3 +1,16 @@
 application.title = Cargo
 front.game.new = New Game
 front.game.continue = Continue
+game.new.player.name = Your name
+game.new.company.name = Company name
+game.new.company.location = Headquarters location
+game.new.start = Start game
+location.barcelona = Barcelona
+location.hamburg = Hamburg
+location.london = London
+location.marseille = Marseille
+location.milan = Milan
+location.prague = Prague
+location.rotterdam = Rotterdam
+game.first.page.introduction = Welcome {0} to Cargo
+game.first.page.continue = Continue
