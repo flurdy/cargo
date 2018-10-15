@@ -19,15 +19,18 @@ trait NewGameForm {
 }
 
 @Singleton
-class GameController @Inject() (val messagesApi: MessagesApi)(implicit val webJarAssets: WebJarAssets) extends Controller with WithWebJarAssets with I18nSupport with NewGameForm with WithLogging {
+class GameController @Inject() (cc: ControllerComponents)
+  extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging {
 
    val startingLocations = List("hamburg","marseille","rotterdam")
 
-   def newGame = Action {
+   // implicit def messages(request: ): Messages: 
+
+   def showNewGameForm = Action { implicit request =>
       Ok(views.html.game.newGame(startingLocations))
    }
 
-   def startNewGame = Action { implicit request =>
+   def submitNewGameDetails = Action { implicit request =>
 
       newGameForm.bindFromRequest.fold(
          errors => {
@@ -36,12 +39,13 @@ class GameController @Inject() (val messagesApi: MessagesApi)(implicit val webJa
             // TODO (views.html.wishlist.createwishlist(errors))
          },{
             case (playerName, companyName, companyLocation) =>
-               Ok(views.html.game.firstPage())
+            logger.warn("New game started")
+               Ok(views.html.game.welcomePage())
          }
       )
    }
 
-   def mainPage = Action {
+   def mainPage = Action { implicit request =>
       Ok(views.html.game.mainPage())
    }
 

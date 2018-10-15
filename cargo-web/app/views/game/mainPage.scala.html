@@ -1,4 +1,4 @@
-@(name: String = "player")(implicit webJarAssets: WebJarAssets, messages: Messages)
+@(name: String = "player")(implicit messages: Messages)
 
 @import helper._
 
@@ -6,7 +6,7 @@
 
    <div class="">
       <p>
-         
+         @Messages("game.main.placeholder")
       </p>
    </div>
 

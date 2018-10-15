@@ -1,4 +1,4 @@
-@()(implicit webJarAssets: WebJarAssets, messages: Messages)
+@()(implicit messages: Messages)
 
 @main() {
 
@@ -6,7 +6,7 @@
 
       <ul>
 
-         <li><a href="@routes.GameController.newGame"
+         <li><a href="@routes.GameController.showNewGameForm"
              class="btn">@Messages("front.game.new")</a></li>
 
          <li><a href="@routes.GameController.continueGame"

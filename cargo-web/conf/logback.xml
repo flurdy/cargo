@@ -1,0 +1,37 @@
+<configuration>
+
+   <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel" />
+
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+         <pattern>%coloredLevel %d{MMM-dd HH:mm:ss} - %logger{15} - %message%n%xException{45}</pattern>
+      </encoder>
+   </appender>
+
+   <appender name="ASYNCSTDOUT" class="ch.qos.logback.classic.AsyncAppender">
+      <appender-ref ref="STDOUT" />
+   </appender>
+
+   <logger name="play"                level="INFO" />
+   <logger name="application"         level="INFO" />
+   <logger name="models"              level="DEBUG" />
+   <logger name="connectors"          level="DEBUG" />
+   <logger name="controllers"         level="DEBUG" />
+   <logger name="repositories"        level="DEBUG" />
+   <logger name="services"            level="DEBUG" />
+   <logger name="com.flurdy.cargo"    level="DEBUG" />
+   <logger name="com.flurdy"          level="INFO" />
+
+   <logger name="play.api.test.WsTestClient" level="WARN" />
+   <logger name="play.api.db.evolutions" level="DEBUG" />
+   <logger name="akka" level="ERROR" />
+   <logger name="com.avaje.ebean.config.PropertyMapLoader" level="OFF" />
+   <logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="OFF" />
+   <logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="OFF" />
+   <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+
+   <root level="WARN">
+      <appender-ref ref="ASYNCSTDOUT" />
+   </root>
+
+</configuration>

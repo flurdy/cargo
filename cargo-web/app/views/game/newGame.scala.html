@@ -1,42 +1,43 @@
-@(startingLocations: List[String])(implicit webJarAssets: WebJarAssets, messages: Messages)
+@(startingLocations: List[String])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
 
 @import helper._
 
 @main() {
 
    <div class="game-form">
-      @form(action=routes.GameController.startNewGame){
+      @form(action=routes.GameController.submitNewGameDetails){
+         @helper.CSRF.formField
 
          <div class="">
-            @Messages("game.new.player.name")
+            @messagesProvider.messages("game.new.player.name")
          </div>
          <div class="">
             <input type="text" name="playername" value="john smith" required />
          </div>
 
          <div class="">
-            @Messages("game.new.company.name")
+            @messagesProvider.messages("game.new.company.name")
          </div>
          <div class="">
             <input type="text" name="companyname" value="Trucks R'Us" required />
          </div>
 
          <div class="">
-            @Messages("game.new.company.location")
+            @messagesProvider.messages("game.new.company.location")
          </div>
          <div class="">
             @for(location <- startingLocations){
                <div class="">
                   <input type="radio" id="location-@location" name="companylocation" value="@location" required />
                   <label for="location-@location">
-                     @Messages(s"location.$location")
+                     @messagesProvider.messages(s"location.$location")
                   </label>
                </div>
             }
          </div>
 
          <div class="">
-            <button type="submit" name="button">@Messages("game.new.start")</button>
+            <button type="submit" name="button">@messagesProvider.messages("game.new.start")</button>
          </div>
       }
 

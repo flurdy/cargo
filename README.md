@@ -1,63 +1,57 @@
 # Cargo
 
-A truck and cargo distribution game.
+A truck and cargo transportation and distribution game
+
+
+## Play
+
+* ~~Online: [cargo.flurdy.io](https://cargo.flurdy.io)~~ (Not yet available)
+* ~~App Store~~ (Not yet available)
+* ~~Play Store~~ (Not yet available)
+* ~~Steam~~ (Not yet available)
 
 ## Install
 
+* [INSTALL.md](../blob/master/INSTALL.md)
 
-### Native
+## Develop
 
-#### Prerequisite
+* [DEVELOP.md](../blob/master/DEVELOP.md)
 
-* Linux or Macos. Other may work
-* Git https://git-scm.org
-* SBT https://github.com/sbt/sbt
+## Changelog
 
-#### Source
-
-    git clone https://github.com/flurdy/cargo
-
-#### Native Run
-
-    cd cargo
-
-    sbt run
-
-## Configure   
-
-TBA
-
-### Docker
-
-#### Prerequisite
-
-* Docker https://docker.com
-* Or Moby
-
-#### Download image
-
-    docker get flurdy/cargo:latest
-
-#### Docker run
-
-    docker run flurdy/cargo:latest
-
-## History
-
-TBA
+* [CHANGELOG.md](../blob/master/CHANGELOG.md)
 
 ## Roadmap
 
-* Create roadmap
+* [ROADMAP.md](../blob/master/ROADMAP.md)
 
-## Help
+## Gameplay Documentation
 
-* https://github.com/flurdy/cargo
+* TBA
+
+## Help & Support
+
+* TBA
 
 ### Known issues
 
-None. Yet.
+* None. Yet. Or everything
+
+## Contact
+
+* Contact form TBA
+
+## License 
+
+* Apache 2 License 
+* [LICENSE](../blob/master/LICENSE) 
 
 ## Contribute
 
-* https://github.com/flurdy/cargo
+* [CONTRIBUTING.md](../blob/master/CONTRIBUTING.md)
+
+## Contributors
+
+* Ivar Abrahamsen [~flurdy](https://github.com/flurdy) | [@flurdy](https://twitter.com/flurdy) | [flurdy.com](https://flurdy.com)
+* [Contributors](https://github.com/flurdy/cargo/graphs/contributors)

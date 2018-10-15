@@ -16,16 +16,23 @@ input, button {
    border: 1px solid silver;
    padding: 1em 2em;
 }
-#nautical_ocean {
-
+#nautical-ocean {
+   padding: 2em;
 }
-#nautical_ship {
+#nautical-ship {
    max-width: 50em;
    min-width: 30em;
 }
 #nautical-bow {
    padding: 0.25em 3em;
    /*text-align: center;*/
+}
+#nautical-buoy {
+   text-align: center;
+   font-size: 0.7em;
+   max-width: 50em;
+   min-width: 30em;
+   padding: 0.4em;
 }
 .game-form > div {
    margin: 0.2em;
