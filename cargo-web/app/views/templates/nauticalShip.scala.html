@@ -1,0 +1,43 @@
+@(title: Option[String] = None)(bulkhead: Html)(implicit messages: Messages)
+
+@nautical(title){
+   <div class="nautical-structure" id="nautical-hull">
+      <div class="nautical-structure" id="nautical-vaka">
+
+         <div class="nautical-component" id="nautical-bow">
+            <header>
+               <h1><a href="/">Cargo</a></h1>
+            </header>
+         </div>
+
+         <div class="nautical-structure" id="nautical-keel">
+            <div class="nautical-structure" id="nautical-innerhull">
+
+               @bulkhead
+
+            </div>
+            <div class="nautical-structure" id="nautical-starboard">
+
+               @game.gameStarboard()
+
+            </div>
+         </div>
+
+         <div class="nautical-component" id="nautical-stern">
+            <ul class="horizontal">
+               <li id="github-logo">
+                  <a href="https://github.com/flurdy/cargo">
+                     <img alt="Github" title="Project site" src="@routes.Assets.versioned("images/GitHub-Mark-Light-32px.png")"/>
+                  </a>
+               </li>
+               <li id="flurdy-logo">
+                  <a href="https://flurdy.com">
+                     <img alt="flurdy" src="@routes.Assets.versioned("images/flurdy_warped_dual_small.png")"/>
+                  </a>
+               </li>
+            </ul>
+         </div>
+
+      </div>
+   </div>
+}

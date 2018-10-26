@@ -1,0 +1,13 @@
+@(title: Option[String] = None)(cargo: Html)(implicit messages: Messages)
+
+@nauticalShip(title){
+   <div class="nautical-structure" id="nautical-bulkhead">
+      <div class="nautical-structure" id="nautical-ballast">
+         <div class="nautical-component" id="nautical-cargo">
+
+            @cargo
+
+         </div>
+      </div>
+   </div>
+}

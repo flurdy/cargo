@@ -12,19 +12,19 @@ A truck and cargo transportation and distribution game
 
 ## Install
 
-* [INSTALL.md](../blob/master/INSTALL.md)
+* [INSTALL.md](https://github.com/flurdy/cargo/blob/master/INSTALL.md)
 
 ## Develop
 
-* [DEVELOP.md](../blob/master/DEVELOP.md)
+* [DEVELOP.md](https://github.com/flurdy/cargo/blob/master/DEVELOP.md)
 
 ## Changelog
 
-* [CHANGELOG.md](../blob/master/CHANGELOG.md)
+* [CHANGELOG.md](https://github.com/flurdy/cargo/blob/master/CHANGELOG.md)
 
 ## Roadmap
 
-* [ROADMAP.md](../blob/master/ROADMAP.md)
+* [ROADMAP.md](https://github.com/flurdy/cargo/blob/master/ROADMAP.md)
 
 ## Gameplay Documentation
 
@@ -44,12 +44,11 @@ A truck and cargo transportation and distribution game
 
 ## License 
 
-* Apache 2 License 
-* [LICENSE](../blob/master/LICENSE) 
+* [Apache 2 License](https://github.com/flurdy/cargo/blob/master/LICENSE) 
 
 ## Contribute
 
-* [CONTRIBUTING.md](../blob/master/CONTRIBUTING.md)
+* [CONTRIBUTING.md](https://github.com/flurdy/cargo/blog/master/CONTRIBUTING.md)
 
 ## Contributors
 

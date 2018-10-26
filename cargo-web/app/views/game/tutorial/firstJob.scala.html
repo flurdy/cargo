@@ -1,0 +1,26 @@
+@(name: String = "player")(implicit messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+   <div class="game-talk">
+      <h3>
+         @Messages("game.tutorial.firstjob.header")
+      </h3>
+      <p>
+         @Messages("game.tutorial.firstjob.description.1")
+         <br/>
+         @Html(Messages("game.tutorial.firstjob.description.2"))
+      </p>
+   </div>
+
+}{
+
+   <div class="game-action">
+
+      <a href="@routes.TutorialController.showFirstJobDetails" class="btn btn-info">@Messages("game.tutorial.firstjob.interested")</a>
+
+   </div>
+
+}

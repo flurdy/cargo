@@ -1,10 +1,15 @@
 application.title = Cargo
+
 front.game.new = New Game
 front.game.continue = Continue
+
+stern.project.link=Cargo project
+
 game.new.player.name = Your name
 game.new.company.name = Company name
 game.new.company.location = Headquarters location
 game.new.start = Start game
+
 location.barcelona = Barcelona
 location.hamburg = Hamburg
 location.london = London
@@ -12,6 +17,61 @@ location.marseille = Marseille
 location.milan = Milan
 location.prague = Prague
 location.rotterdam = Rotterdam
+
 game.welcome.page.introduction = Welcome {0} to Cargo
 game.welcome.page.start = Start game
-game.main.placeholder=Main game page
+
+game.tutorial.firstjob.header=First freight job offer!
+game.tutorial.firstjob.description.1=Your cousin's neighbour has heard that your have started a trucking company.
+game.tutorial.firstjob.description.2=And your cousin has <em>convinced</em> his neighbour that you can deliver some of his goods!
+game.tutorial.firstjob.interested=great
+
+game.tutorial.firstjob.details.header=First freight job
+game.job.details.title=Freight job
+game.job.details.company=Company
+game.job.details.cargo=Cargo
+game.job.details.pickup=Pick up
+game.job.details.destination=Destination
+game.job.details.routelength=Route length
+game.job.details.compensation=Compensation
+game.job.details.deadline=Deadline
+game.job.accept=take job
+
+game.tutorial.firsttruck.header=Need a truck
+game.tutorial.firsttruck.description.1=Now you have your first freight job, you need a truck to delivery the cargo with.
+game.tutorial.firsttruck.description.2=Luckily you have spotted a truck in the local second hand dealer.
+game.tutorial.firsttruck.need=I need that truck
+
+game.tutorial.firsttruck.details.header=Buy first truck
+
+game.truck.buy.truck=Buy truck
+game.truck.details.make=Make and model
+game.truck.details.power=Engine power
+game.truck.details.chassis=Chassis
+game.truck.details.steering=Steering
+game.truck.details.age=Age
+game.truck.details.mileage=Mileage
+game.truck.details.condition=Condition
+game.truck.details.price=Price
+game.truck.details.cabin=Cabin
+
+game.truck.cant.afford=I can''t afford that truck
+game.truck.buy=buy truck
+
+game.tutorial.firstbankloan.header=First bank loan
+game.tutorial.firstbankloan.description.1=Since you can not afford to buy that truck outright you need a bank loan.
+game.tutorial.firstbankloan.description.2=You have been taking on many driving jobs over the last few years, and got some savings.
+game.tutorial.firstbankloan.description.3=Also you have a good relationship with your local bank manager, so he is prepared to offer your company a loan.
+game.tutorial.firstbankloan.details=more information
+
+game.tutorial.firstbankloan.details.header=First bank loan
+game.bank.loan.title=First bank loan
+game.bank.loan.terms=Terms
+game.bank.loan.repayment.monthly=Monthly repayments
+game.bank.loan.amount=Loan amount
+game.bank.loan.takeout=take out loan
+
+game.tutorial.firsttruck.again.header=Need a truck still
+game.tutorial.firsttruck.again.description.1=Now you have a company balance that can afford the truck with help of a new bank loan.
+game.tutorial.firsttruck.again.description.2=Lets go buy that truck.
+game.tutorial.firsttruck.again.need=now I can afford that truck

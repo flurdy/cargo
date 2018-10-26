@@ -5,10 +5,6 @@ import play.api._
 import play.api.mvc._
 import play.api.i18n.{MessagesApi, I18nSupport}
 
-// trait WithWebJarAssets {
-//    implicit def webJarAssets: WebJarAssets
-   // implicit def request2WebJarAssets(implicit request: RequestHeader): WebJarAssets = webJarAssets
-// }
 
 trait WithLogging {
 

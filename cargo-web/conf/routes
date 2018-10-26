@@ -6,9 +6,21 @@
 
 GET     /                           controllers.HomeController.index
 GET     /game/new                   controllers.GameController.showNewGameForm
-POST    /game/new/start             controllers.GameController.submitNewGameDetails
-GET     /game/new/main              controllers.GameController.mainPage
+POST    /game/new                   controllers.GameController.submitNewGameDetails
 GET     /game/continue              controllers.GameController.continueGame
+GET     /game/tutorial/start        controllers.GameController.startGame
+
+GET     /game/tutorial/job/first            controllers.TutorialController.showFirstJob
+GET     /game/tutorial/job/first/details    controllers.TutorialController.showFirstJobDetails
+POST    /game/tutorial/job/first            controllers.TutorialController.takeFirstJob
+GET     /game/tutorial/truck/first          controllers.TutorialController.showFirstTruck
+GET     /game/tutorial/truck/first/details  controllers.TutorialController.showFirstTruckDetails
+GET     /game/tutorial/bank/first           controllers.TutorialController.showFirstBankLoan
+GET     /game/tutorial/bank/first/details   controllers.TutorialController.showFirstBankLoanDetails
+POST    /game/tutorial/bank/first           controllers.TutorialController.takeOutFirstBankLoan
+GET     /game/tutorial/truck/first/again    controllers.TutorialController.showFirstTruckAgain
+GET     /game/tutorial/truck/first/again/details  controllers.TutorialController.showFirstTruckDetailsAgain
+POST    /game/tutorial/truck/first/again    controllers.TutorialController.buyFirstTruck
 
 GET     /favicon.ico           controllers.Default.notFound
 GET     /loading.gif           controllers.Default.notFound

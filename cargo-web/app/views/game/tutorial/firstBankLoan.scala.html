@@ -1,0 +1,31 @@
+@(name: String = "player")(implicit messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead(Some("First bank loan")) {
+
+<div class="game-talk">
+   <h3>
+      @Messages("game.tutorial.firstbankloan.header")
+   </h3>
+   <p>
+      @Messages("game.tutorial.firstbankloan.description.1")
+   </p>
+   <p>
+      @Messages("game.tutorial.firstbankloan.description.2")
+   </p>
+   <p>
+      @Messages("game.tutorial.firstbankloan.description.3")
+   </p>
+</div>
+
+}{
+
+<div class="game-action">
+
+   <a href="@routes.TutorialController.showFirstBankLoanDetails" class="btn btn-info">
+      @Messages("game.tutorial.firstbankloan.details")</a>
+
+</div>
+
+}

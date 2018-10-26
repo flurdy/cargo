@@ -1,0 +1,163 @@
+/*
+   ** Using flurdy's nautical layout http://flurdy.com/docs/nautical/grid-v3/
+*/
+html, body {
+  height: 100%;
+  max-height: 100%;
+}
+body {
+   background-color: #333355;
+   font-family: 'Montserrat', sans-serif;
+}
+a, a:visited {
+   /* color: #aaffaa; */
+}
+a:hover, a:active, .btn:hover, .btn:active {
+   /* color: #ffffaa; */
+}
+input, button {
+   /* color: black; */
+}
+.nautical-component {
+}
+#nautical-ocean {
+  padding: 2em;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 0.5em;
+  /* background-color: green; */
+}
+#nautical-fleet {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#nautical-ship {
+  /* background-color: yellow; */
+   max-width: 70em;
+   min-width: 50em;
+   /* margin: auto; */
+}
+#nautical-vaka {
+   border: 1px solid silver;
+   /* background-color: navy; */
+   /* background-color: #333355; */
+   background-color: #2B3E50;
+   padding: 1em 2em 2em 2em;
+   display: grid;
+   grid-template-rows: 4em 1fr 1.5em;
+}
+#nautical-keel {
+   display: grid;
+   grid-template-columns: 1fr 12em;
+}
+#nautical-innerhull {
+   display: grid;
+   grid-template-rows: 1fr 5em;
+}
+#nautical-bulkhead {
+   /* display: grid; */
+}
+#nautical-bridge {
+   padding: 1em;
+}
+#nautical-bow {
+   padding: 0.25em 3em;
+   border-bottom: 1px solid silver;
+}
+#nautical-bow header h1 {
+   padding: 0;
+   margin: 0;
+   font-family: 'Righteous', cursive;
+}
+#nautical-bow header h1 a,
+#nautical-bow header h1 a:visited {
+   text-decoration: none;
+   /* color: white; */
+   color: inherit;
+}
+#nautical-starboard {
+   padding: 1em 0.8em;
+   border-left: 1px solid silver;
+}
+#nautical-starboard ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0 0 0 1em;
+}
+#nautical-starboard li {
+   border-bottom: 1px solid silver;
+   overflow: hidden;
+   padding: 0.5em 0;
+}
+#nautical-starboard li:last-child {
+    border-bottom: none;
+}
+#nautical-starboard .deck-header {
+   text-align: left;
+   white-space: nowrap;
+   width: 5em;
+   font-size: 10pt;
+}
+#nautical-starboard .deck-data {
+   text-align: right;
+   white-space: nowrap;
+   font-size: 9pt;
+}
+#nautical-stern {
+   border-top: 1px solid silver;
+   padding: 1em 0 0 0;
+}
+#nautical-stern li {
+   display: inline;
+   float: right;
+   font-size: 8pt;
+   /* width: 15em; */
+   white-space: nowrap;
+   margin: 0 1em;
+   padding: 0 1em;
+}
+#nautical-stern #flurdy-logo img {
+   height: 1.5em;
+   margin-top: 0.4em;
+}
+#nautical-stern #github-logo img {
+   height: 1.8em;
+   margin-top: 0.1em;
+}
+#nautical-buoy {
+   text-align: center;
+   font-size: 0.7em;
+   max-width: 50em;
+   min-width: 30em;
+   padding: 0.4em;
+}
+#nautical-ballast {
+   padding: 1em 2em;
+   min-height: 20em;
+}
+#nautical-cargo {
+
+}
+.game-form > div {
+   margin: 0.2em;
+}
+.game-talk {
+
+}
+.game-action {
+   text-align: center;
+}
+.job-card {
+   /* max-width: 25em; */
+}
+.job-card dt {
+   font-size: 11pt;
+}
+.job-card dd {
+   font-size: 10pt;
+}

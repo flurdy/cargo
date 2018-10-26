@@ -1,0 +1,51 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead(Some("First truck details")) {
+
+<div class="game-talk">
+   <h3>
+      @Messages("game.tutorial.firsttruck.details.header")
+   </h3>
+
+   <div class="card border job-card">
+      <div class="card-header">
+         @Messages("game.truck.buy.truck")
+      </div>
+      <div class="card-body">
+         <dl class="row">
+            <dt class="col-sm-5">@Messages("game.truck.details.make")</dt>
+            <dd class="col-sm-6">Scania Streamline</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.chassis")</dt>
+            <dd class="col-sm-6">4x2 wheelset</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.power")</dt>
+            <dd class="col-sm-6">440 hp</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.steering")</dt>
+            <dd class="col-sm-6">Left hand</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.age")</dt>
+            <dd class="col-sm-6">8 years</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.mileage")</dt>
+            <dd class="col-sm-6">389,239 km</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.condition")</dt>
+            <dd class="col-sm-6">Ok</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.cabin")</dt>
+            <dd class="col-sm-6">No</dd>
+            <dt class="col-sm-5">@Messages("game.truck.details.price")</dt>
+            <dd class="col-sm-6">€89,900</dd>
+         </dl>
+      </div>
+   </div>
+
+</div>
+
+}{
+
+<div class="game-action">
+
+   <a href="@routes.TutorialController.showFirstBankLoan" class="btn btn-warning">
+      @Messages("game.truck.cant.afford")</a>
+
+</div>
+
+}
