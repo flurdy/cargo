@@ -15,7 +15,7 @@ trait WithLogging {
 
 @Singleton
 class HomeController @Inject() (cc: ControllerComponents)
-  extends AbstractController(cc) with I18nSupport {
+  extends AbstractController(cc) with I18nSupport with WithLogging with IncludeGameContext {
 
   def index = Action { implicit request =>
     Ok(views.html.index())

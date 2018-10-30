@@ -161,3 +161,6 @@ input, button {
 .job-card dd {
    font-size: 10pt;
 }
+.form-group label {
+   font-size: 14pt;
+}

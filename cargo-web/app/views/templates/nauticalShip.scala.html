@@ -1,4 +1,4 @@
-@(title: Option[String] = None)(bulkhead: Html)(implicit messages: Messages)
+@(title: Option[String] = None)(bulkhead: Html)(implicit messages: Messages, gameContext: GameContext)
 
 @nautical(title){
    <div class="nautical-structure" id="nautical-hull">
@@ -18,7 +18,7 @@
             </div>
             <div class="nautical-structure" id="nautical-starboard">
 
-               @game.gameStarboard()
+               @game.gameStarboard(gameContext)
 
             </div>
          </div>

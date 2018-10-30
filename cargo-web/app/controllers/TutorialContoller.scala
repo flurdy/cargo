@@ -11,7 +11,7 @@ import scala.concurrent.Future
 
 @Singleton
 class TutorialController @Inject() (cc: ControllerComponents)
-  extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging {
+  extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging with IncludeGameContext {
 
    def startTutorial = Action { implicit request =>
       logger.info("Tutorial started")

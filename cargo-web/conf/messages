@@ -1,6 +1,6 @@
 application.title = Cargo
 
-front.game.new = New Game
+front.game.new = New game
 front.game.continue = Continue
 
 stern.project.link=Cargo project
@@ -18,8 +18,28 @@ location.milan = Milan
 location.prague = Prague
 location.rotterdam = Rotterdam
 
-game.welcome.page.introduction = Welcome {0} to Cargo
-game.welcome.page.start = Start tutorial
+starboard.company=Company
+starboard.bank.balance=Bank balance
+starboard.bank.loans=Bank loans
+starboard.date.date=Date
+starboard.date.month.1=January
+starboard.date.month.2=February
+starboard.date.month.3=March
+starboard.date.month.4=April
+starboard.date.month.5=May
+starboard.date.month.6=June
+starboard.date.month.7=July
+starboard.date.month.8=August
+starboard.date.month.9=September
+starboard.date.month.10=October
+starboard.date.month.11=November
+starboard.date.month.12=December
+starboard.week=Week
+
+game.welcome.header=Welcome
+game.welcome.description.1 =Welcome, to Cargo, the truck freight and cargo distribution and transportation game.
+game.welcome.description.2 =Please begin playing the game by walking through the helpful tutorial
+game.welcome.start.tutorial = start tutorial
 
 game.tutorial.firstjob.header=First freight job offer!
 game.tutorial.firstjob.description.1=Your cousin's neighbour has heard that your have started a trucking company.

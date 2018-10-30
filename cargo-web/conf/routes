@@ -7,6 +7,7 @@
 GET     /                           controllers.HomeController.index
 GET     /game/new                   controllers.GameController.showNewGameForm
 POST    /game/new                   controllers.GameController.submitNewGameDetails
+GET     /game/welcome               controllers.GameController.showWelcome
 GET     /game/continue              controllers.GameController.continueGame
 GET     /game/start                 controllers.GameController.startGame
 

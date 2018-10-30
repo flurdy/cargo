@@ -1,18 +1,18 @@
-@()(implicit messages: Messages)
+@()(implicit messages: Messages, gameContext: GameContext)
 
-@templates.nauticalBulkhead() {
+@templates.nauticalGameBulkhead() {
 
-   <div>
+}{
 
-      <ul>
+}{
 
-         <li><a href="@routes.GameController.showNewGameForm"
-             class="btn">@Messages("front.game.new")</a></li>
+   <div class="game-action">
 
-         <li><a href="@routes.GameController.continueGame"
-             class="btn">@Messages("front.game.continue")</a></li>
+      <a href="@routes.GameController.showNewGameForm" class="btn btn-info">
+         @Messages("front.game.new")</a>
 
-      </ul>
+      <a href="@routes.GameController.continueGame" class="btn btn-info">
+         @Messages("front.game.continue")</a>
 
    </div>
 

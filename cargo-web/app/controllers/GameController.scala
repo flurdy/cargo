@@ -7,6 +7,7 @@ import play.api.data.Forms._
 import play.api.i18n.{MessagesApi, I18nSupport}
 import play.api.mvc._
 import scala.concurrent.Future
+import models._
 
 trait NewGameForm {
    val newGameForm = Form(
@@ -17,9 +18,18 @@ trait NewGameForm {
    )
 }
 
+trait IncludeGameContext {
+
+   implicit def gameContext[A](implicit request: Request[A]): GameContext = {
+      val bankLoan = BankLoan(GameDate(1985,8,1), new MoneyAmount("-100000"), new MoneyAmount("-98783"))
+      GameContext( GameDate(1985,8,1), CompanyContext("Trucks R'Us", new MoneyAmount("251120"), BankLoans(Set(bankLoan))))
+   }
+
+}
+
 @Singleton
 class GameController @Inject() (cc: ControllerComponents)
-  extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging {
+  extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging with IncludeGameContext {
 
    val startingLocations = List("hamburg","marseille","rotterdam")
 
@@ -36,9 +46,13 @@ class GameController @Inject() (cc: ControllerComponents)
          },{
             case (playerName, companyName) =>
                logger.warn("New game started")
-               Ok(views.html.game.welcomePage())
+               Redirect(routes.GameController.showWelcome())
          }
       )
+   }
+
+   def showWelcome = Action { implicit request =>
+      Ok(views.html.game.welcomePage())
    }
 
    def startGame = Action { implicit request =>

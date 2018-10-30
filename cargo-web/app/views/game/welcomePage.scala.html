@@ -1,18 +1,28 @@
-@(name: String = "player")(implicit messages: Messages)
+@(name: String = "player")(implicit messages: Messages, gameContext: GameContext)
 
 @import helper._
 
-@templates.nauticalBulkhead() {
+@templates.nauticalGameBulkhead() {
 
-   <div class="">
+   <h3>
+      @Messages("game.welcome.header")
+   </h3>
+
+
+}{
+
+   <div class="game-talk">
       <p>
-         @Messages("game.welcome.page.introduction", name)
+         @Messages("game.welcome.description.1", name)
+      </p>
+      <p>
+         @Messages("game.welcome.description.2", name)
       </p>
    </div>
 
-   <div class="">
-      <a class="btn" href="@routes.GameController.startGame">@Messages("game.welcome.page.start")</a>
+}{
+   <div class="game-action">
+      <a class="btn btn-info" href="@routes.TutorialController.startTutorial">@Messages("game.welcome.start.tutorial")</a>
    </div>
-
 
 }

@@ -1,46 +1,35 @@
-@(startingLocations: List[String])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+@(startingLocations: List[String])(implicit request: RequestHeader, messagesProvider: MessagesProvider, gameContext: GameContext)
 
 @import helper._
 
-@templates.nauticalBulkhead() {
+@templates.nauticalGameBulkhead() {
+
+}{
 
    <div class="game-form">
-      @form(action=routes.GameController.submitNewGameDetails){
+      @form(action=routes.GameController.submitNewGameDetails, 'id -> "new-game"){
          @helper.CSRF.formField
 
-         <div class="">
-            @messagesProvider.messages("game.new.player.name")
-         </div>
-         <div class="">
-            <input type="text" name="playername" value="john smith" required />
-         </div>
-
-         <div class="">
-            @messagesProvider.messages("game.new.company.name")
-         </div>
-         <div class="">
-            <input type="text" name="companyname" value="Trucks R'Us" required />
+         <div class="form-group col-sm-8">
+            <label for="playername">
+               @messagesProvider.messages("game.new.player.name")</label>
+            <input type="text" class="form-control" id="playername" name="playername" value="john smith" required />
          </div>
 
-         @* <div class="">
-            @messagesProvider.messages("game.new.company.location")
+         <div class="form-group col-sm-8">
+            <label for="companyname">
+               @messagesProvider.messages("game.new.company.name")</label>
+            <input type="text" class="form-control" id="companyname" name="companyname" value="Trucks R'Us" required />
          </div>
-         <div class="">
-            @for(location <- startingLocations){
-               <div class="">
-                  <input type="radio" id="location-@location" name="companylocation" value="@location" required />
-                  <label for="location-@location">
-                     @messagesProvider.messages(s"location.$location")
-                  </label>
-               </div>
-            }
-         </div> *@
 
-         <div class="">
-            <button type="submit" name="button" class="btn btn-success">@messagesProvider.messages("game.new.start")</button>
-         </div>
       }
 
    </div>
 
+}{
+   <div class="game-action">
+
+      <button type="submit" form="new-game" name="button" class="btn btn-success">@messagesProvider.messages("game.new.start")</button>
+
+   </div>
 }

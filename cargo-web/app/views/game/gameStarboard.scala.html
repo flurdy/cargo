@@ -1,38 +1,38 @@
-@()(implicit messages: Messages)
+@(gameContext: GameContext)(implicit messages: Messages)
 
 <ul>
    <li>
       <div class="deck-header">
-         Company:
+         @Messages("starboard.company"):
       </div>
       <div class="deck-data">
-         Trucks R'Us
+         @Html(gameContext.companyContext.companyName)
       </div>
    </li>
    <li>
       <div class="deck-header">
-         Bank balance:
+         @Messages("starboard.bank.balance"):
       </div>
       <div class="deck-data">
-         €251,123
+         &euro; @gameContext.companyContext.balance.formatted
       </div>
    </li>
    <li>
       <div class="deck-header">
-         Bank loans:
+         @Messages("starboard.bank.loans"):
       </div>
       <div class="deck-data">
-         €-98,784
+         &euro; @gameContext.companyContext.bankLoans.total.formatted
       </div>
    </li>
    <li>
       <div class="deck-header">
-         Date:
+         @Messages("starboard.date.date"):
       </div>
       <div class="deck-data">
-         1985 August
+         @gameContext.gameDate.year @Messages(s"starboard.date.month.${gameContext.gameDate.month}")
          <br />
-         Week 1
+         @Messages("starboard.week") @gameContext.gameDate.week
       </div>
    </li>
 </ul>
