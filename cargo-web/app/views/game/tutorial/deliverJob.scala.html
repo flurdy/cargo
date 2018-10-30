@@ -1,0 +1,40 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.job.deliver.header")
+</h3>
+
+}{
+
+<div class="game-talk">
+   <p>
+      @Messages("game.tutorial.job.deliver.description.1")
+      <br />
+      @Messages("game.tutorial.job.deliver.description.2")
+   </p>
+   <p>
+      @Messages("game.tutorial.job.deliver.description.3")
+      <br />
+      @Messages("game.tutorial.job.deliver.description.4")
+      <br />
+      @Messages("game.tutorial.job.deliver.description.5")
+   </p>
+</div>
+
+}{
+
+<div class="game-action">
+
+   <form action="@routes.TutorialController.deliverJob" method="POST">
+      @helper.CSRF.formField
+      <button type="submit" class="btn btn-success">
+         @Messages("game.job.freight.deliver.wait")</button>
+   </form>
+
+</div>
+
+}

@@ -1,6 +1,9 @@
-@(title: Option[String] = None)(cargo: Html)(bridge: Html)(implicit messages: Messages)
+@(title: Option[String] = None)(jib: Html)(cargo: Html)(bridge: Html)(implicit messages: Messages)
 
 @nauticalShip(title){
+   <div class="nautical-compartment" id="nautical-jib">
+      @jib
+   </div>
    <div class="nautical-structure" id="nautical-bulkhead">
       <div class="nautical-structure" id="nautical-ballast">
          <div class="nautical-component" id="nautical-cargo">

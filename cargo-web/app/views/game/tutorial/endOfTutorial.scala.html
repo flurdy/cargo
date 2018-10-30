@@ -1,0 +1,52 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.end.header")
+</h3>
+
+}{
+
+<div class="game-talk">
+   <p>
+      @Messages("game.tutorial.end.garage")
+      <br/>
+      @Messages("game.tutorial.end.truck.job")
+   </p>
+   <p>
+      @Messages("game.tutorial.end.own")
+   </p>
+   <p>
+      @Messages("game.tutorial.end.keep.playing")
+      <br/>
+      @Messages("game.tutorial.end.buy.truck")
+      <br/>
+      @Messages("game.tutorial.end.expand")
+      <br/>
+      @Messages("game.tutorial.end.buy.garages")
+   </p>
+   <p>
+      @Messages("game.tutorial.end.deliver")
+      <br/>
+      @Messages("game.tutorial.end.challenges")
+   </p>
+   <p>
+      @Messages("game.tutorial.end.play")
+   </p>
+</div>
+
+}{
+
+<div class="game-action">
+
+   <form action="@routes.TutorialController.endTutorial" method="POST">
+      @helper.CSRF.formField
+      <button type="submit" class="btn btn-success">@Messages("game.tutorial.end.continue")</button>
+   </form>
+
+</div>
+
+}

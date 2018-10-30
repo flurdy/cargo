@@ -1,0 +1,48 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.job.delivered.header")
+</h3>
+
+}{
+
+<div class="game-talk">
+   <p>
+      @Messages("game.tutorial.job.delivered.description.1")
+   </p>
+   <p>
+      @Messages("game.tutorial.job.delivered.description.2")
+      <br/>
+      @Messages("game.tutorial.job.delivered.description.3")
+   </p>
+   <p>
+      @Messages("game.tutorial.job.delivered.expenses.title")
+   </p>
+   <ul>
+      <li>@Messages("game.tutorial.job.delivered.expenses.1")</li>
+      <li>@Messages("game.tutorial.job.delivered.expenses.2")</li>
+   </ul>
+   <p>
+      @Messages("game.tutorial.job.delivered.expenses.not.title")
+   </p>
+   <ul>
+      <li>@Messages("game.tutorial.job.delivered.expenses.not.1")</li>
+      <li>@Messages("game.tutorial.job.delivered.expenses.not.2")</li>
+      <li>@Messages("game.tutorial.job.delivered.expenses.not.3")</li>
+   </ul>
+</div>
+
+}{
+
+<div class="game-action">
+
+   <a href="@routes.TutorialController.showJobDeliveredDetails" class="btn btn-info">
+      @Messages("game.tutorial.job.delivered.details")</a>
+
+</div>
+
+}

@@ -19,7 +19,7 @@ location.prague = Prague
 location.rotterdam = Rotterdam
 
 game.welcome.page.introduction = Welcome {0} to Cargo
-game.welcome.page.start = Start game
+game.welcome.page.start = Start tutorial
 
 game.tutorial.firstjob.header=First freight job offer!
 game.tutorial.firstjob.description.1=Your cousin's neighbour has heard that your have started a trucking company.
@@ -39,7 +39,7 @@ game.job.accept=take job
 
 game.tutorial.firsttruck.header=Need a truck
 game.tutorial.firsttruck.description.1=Now you have your first freight job, you need a truck to delivery the cargo with.
-game.tutorial.firsttruck.description.2=Luckily you have spotted a truck in the local second hand dealer.
+game.tutorial.firsttruck.description.2=Luckily you have spotted a truck for sale in the local second hand dealer.
 game.tutorial.firsttruck.need=I need that truck
 
 game.tutorial.firsttruck.details.header=Buy first truck
@@ -72,6 +72,83 @@ game.bank.loan.amount=Loan amount
 game.bank.loan.takeout=take out loan
 
 game.tutorial.firsttruck.again.header=Need a truck still
-game.tutorial.firsttruck.again.description.1=Now you have a company balance that can afford the truck with help of a new bank loan.
+game.tutorial.firsttruck.again.description.1=Now you have a company balance that can afford to buy the truck with help of a new bank loan.
 game.tutorial.firsttruck.again.description.2=Lets go buy that truck.
 game.tutorial.firsttruck.again.need=now I can afford that truck
+
+game.tutorial.job.start.header=Start first job
+game.tutorial.job.start.description.1=Now you have a truck and your first job to deliver.
+game.tutorial.job.start.description.2=Lets pick up the freight and get it loaded on your truck.
+
+game.job.freight.pickup=pick up freight
+
+game.tutorial.job.deliver.header=On the road
+game.tutorial.job.deliver.description.1=You have picked up your freight.
+game.tutorial.job.deliver.description.2=And are currently driving to your destination.
+game.tutorial.job.deliver.description.3=As you only have one truck, and only one driver (yourself),
+game.tutorial.job.deliver.description.4=you can not do anything else until it is delivered.
+game.tutorial.job.deliver.description.5=(We do not condone using mobile phone whilst driving)
+
+game.job.freight.deliver.wait=wait until freight is delivered
+
+game.tutorial.job.delivered.header=Job delivered
+game.tutorial.job.delivered.description.1=Congratulation!
+game.tutorial.job.delivered.description.2=You have delivered your first freight.
+game.tutorial.job.delivered.description.3=Your cousin''s neighbour will now pay your company for the delivery.
+
+game.tutorial.job.delivered.expenses.title=Though you have accrued some expenses
+game.tutorial.job.delivered.expenses.1=Fuel
+game.tutorial.job.delivered.expenses.2=Lodging and food. Your truck does not have a cabin
+game.tutorial.job.delivered.expenses.not.title=You avoided some expenses
+game.tutorial.job.delivered.expenses.not.1=No salary as you drove yourself
+game.tutorial.job.delivered.expenses.not.2=No traffic fines as your drove within the law
+game.tutorial.job.delivered.expenses.not.3=No damaged cargo as your drove safely
+
+game.tutorial.job.delivered.details=delivery details
+
+game.tutorial.job.delivered.details.header=Job delivered details
+game.job.delivered.details.title=Delivery details
+game.job.delivered.details.company=Company
+game.job.delivered.details.cargo=Cargo
+game.job.delivered.details.destination=Destination
+game.job.delivered.details.routelength=Route length
+game.job.delivered.details.time=Time taken
+game.job.delivered.details.expenses.fuel=Fuel expenses
+game.job.delivered.details.expenses.lodging=Food and lodging
+game.job.delivered.details.invoice=Invoice amount
+game.job.delivered.details.balance=Job revenue
+
+game.job.invoice=invoice client
+
+game.tutorial.garage.first.header=You need a garage
+game.tutorial.garage.first.description.1=You now need a garage to park and maintain your truck(s).
+game.tutorial.garage.first.description.2=And to act as an office for you as you expand your business.
+game.tutorial.garage.first.description.3=As you expand your business you will need multiple garages, offices and distribution centres spread around the continent and beyond.
+game.tutorial.garage.first.description.4=For now you your needs and bank balance is rather modest.
+game.tutorial.garage.first.description.5=Luckily for you a tiny garage / shed is for sale near you.
+game.tutorial.garage.first.details=garage details
+
+game.tutorial.garage.first.details.header=Garage details
+
+game.garage.details.title=Garage
+game.garage.details.location=Location
+game.garage.details.capacity=Truck capacity
+game.garage.details.price=Sale price
+
+game.garage.buy=Buy garage
+
+game.tutorial.end.header=End of tutorial
+game.tutorial.end.garage=You have bought your first garage (a small shed).
+game.tutorial.end.truck.job=You have a truck, and you have completed your first freight delivery job.
+game.tutorial.end.own=You are now ready to play Cargo on your own.
+game.tutorial.end.keep.playing=Keep on playing, keep on delivering on time, keep on making a profit.
+game.tutorial.end.buy.truck=Save up to buy a second truck, hire your first driver.
+game.tutorial.end.expand=Buy more trucks, hire more drivers, mechanics, expand your business.
+game.tutorial.end.buy.garages=Buy more garages across the country, continent and world.
+game.tutorial.end.deliver=Transport, distribute and deliver cargo everywhere.
+game.tutorial.end.challenges=There will be challenges though, it is not an easy ride.
+game.tutorial.end.play=Enjoy playing Cargo!
+
+
+
+game.tutorial.end.continue=end tutorial

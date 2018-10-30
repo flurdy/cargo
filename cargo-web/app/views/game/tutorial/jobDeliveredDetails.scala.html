@@ -1,0 +1,56 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.job.delivered.details.header")
+</h3>
+
+}{
+
+<div class="game-talk">
+
+   <div class="card border job-card">
+      <div class="card-header">
+         @Messages("game.job.delivered.details.title")
+      </div>
+      <div class="card-body">
+         <dl class="row">
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.company")</dt>
+            <dd class="col-sm-6">Jonny Import Export PLC</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.cargo")</dt>
+            <dd class="col-sm-6">Scrap metal</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.destination")</dt>
+            <dd class="col-sm-6">Frankfurt</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.routelength")</dt>
+            <dd class="col-sm-6">43.1km</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.time")</dt>
+            <dd class="col-sm-6">15 hours</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.invoice")</dt>
+            <dd class="col-sm-6">€3.200</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.expenses.fuel")</dt>
+            <dd class="col-sm-6">€-650</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.expenses.lodging")</dt>
+            <dd class="col-sm-6">€-150</dd>
+            <dt class="col-sm-5">@Messages("game.job.delivered.details.balance")</dt>
+            <dd class="col-sm-6">€2,400</dd>
+         </dl>
+      </div>
+   </div>
+
+</div>
+
+}{
+
+   <div class="game-action">
+
+      <form action="@routes.TutorialController.invoiceJob" method="POST">
+         @helper.CSRF.formField
+         <button type="submit" class="btn btn-success">@Messages("game.job.invoice")</button>
+      </form>
+
+   </div>
+
+}

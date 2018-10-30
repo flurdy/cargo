@@ -1,0 +1,38 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.garage.first.header")
+</h3>
+
+}{
+
+   <div class="game-talk">
+      <p>
+         @Messages("game.tutorial.garage.first.description.1")
+         <br />
+         @Messages("game.tutorial.garage.first.description.2")
+      </p>
+      <p>
+         @Messages("game.tutorial.garage.first.description.3")
+      </p>
+      <p>
+         @Messages("game.tutorial.garage.first.description.4")
+         <br />
+         @Messages("game.tutorial.garage.first.description.5")
+      </p>
+   </div>
+
+}{
+
+<div class="game-action">
+
+   <a href="@routes.TutorialController.showFirstGarageDetails" class="btn btn-info">
+      @Messages("game.tutorial.garage.first.details")</a>
+
+</div>
+
+}

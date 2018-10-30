@@ -37,15 +37,12 @@ input, button {
   align-items: center;
 }
 #nautical-ship {
-  /* background-color: yellow; */
-   max-width: 70em;
-   min-width: 50em;
-   /* margin: auto; */
+  /* width: 70em; */
+  max-width: 70em;
+  min-width: 70em;
 }
 #nautical-vaka {
    border: 1px solid silver;
-   /* background-color: navy; */
-   /* background-color: #333355; */
    background-color: #2B3E50;
    padding: 1em 2em 2em 2em;
    display: grid;
@@ -57,7 +54,10 @@ input, button {
 }
 #nautical-innerhull {
    display: grid;
-   grid-template-rows: 1fr 5em;
+   grid-template-rows: 5em 1fr 5em;
+}
+#nautical-jib {
+   padding: 2em;
 }
 #nautical-bulkhead {
    /* display: grid; */

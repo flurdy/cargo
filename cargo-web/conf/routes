@@ -8,8 +8,9 @@ GET     /                           controllers.HomeController.index
 GET     /game/new                   controllers.GameController.showNewGameForm
 POST    /game/new                   controllers.GameController.submitNewGameDetails
 GET     /game/continue              controllers.GameController.continueGame
-GET     /game/tutorial/start        controllers.GameController.startGame
+GET     /game/start                 controllers.GameController.startGame
 
+GET     /game/tutorial/start                controllers.TutorialController.startTutorial
 GET     /game/tutorial/job/first            controllers.TutorialController.showFirstJob
 GET     /game/tutorial/job/first/details    controllers.TutorialController.showFirstJobDetails
 POST    /game/tutorial/job/first            controllers.TutorialController.takeFirstJob
@@ -21,6 +22,20 @@ POST    /game/tutorial/bank/first           controllers.TutorialController.takeO
 GET     /game/tutorial/truck/first/again    controllers.TutorialController.showFirstTruckAgain
 GET     /game/tutorial/truck/first/again/details  controllers.TutorialController.showFirstTruckDetailsAgain
 POST    /game/tutorial/truck/first/again    controllers.TutorialController.buyFirstTruck
+GET     /game/tutorial/job/start            controllers.TutorialController.showStartJob
+POST    /game/tutorial/job/start            controllers.TutorialController.startJob
+GET     /game/tutorial/job/deliver          controllers.TutorialController.showDeliverJob
+POST    /game/tutorial/job/deliver          controllers.TutorialController.deliverJob
+GET     /game/tutorial/job/delivered        controllers.TutorialController.showJobDelivered
+GET     /game/tutorial/job/delivered/details  controllers.TutorialController.showJobDeliveredDetails
+POST    /game/tutorial/job/invoice          controllers.TutorialController.invoiceJob
+GET     /game/tutorial/garage/first         controllers.TutorialController.showFirstGarage
+GET     /game/tutorial/garage/first/details   controllers.TutorialController.showFirstGarageDetails
+POST    /game/tutorial/garage/first         controllers.TutorialController.buyGarage
+GET     /game/tutorial/end                  controllers.TutorialController.showEndOfTutorial
+POST    /game/tutorial/end                  controllers.TutorialController.endTutorial
+
+GET     /game                               controllers.GameController.showGame
 
 GET     /favicon.ico           controllers.Default.notFound
 GET     /loading.gif           controllers.Default.notFound
@@ -32,4 +47,3 @@ GET     /.well-known/assetlinks.json  controllers.Default.notFound
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-##GET     /webjars/*file              controllers.WebJarAssets.at(file)

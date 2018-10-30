@@ -1,0 +1,42 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+<h3>
+   @Messages("game.tutorial.garage.first.details.header")
+</h3>
+
+}{
+<div class="game-talk">
+   <div class="card border job-card">
+      <div class="card-header">
+         @Messages("game.garage.details.title")
+      </div>
+      <div class="card-body">
+         <dl class="row">
+            <dt class="col-sm-5">@Messages("game.garage.details.location")</dt>
+            <dd class="col-sm-6">Frankfurt</dd>
+            <dt class="col-sm-5">@Messages("game.garage.details.capacity")</dt>
+            <dd class="col-sm-6">2</dd>
+            <dt class="col-sm-5">@Messages("game.garage.details.price")</dt>
+            <dd class="col-sm-6">€59,300</dd>
+         </dl>
+      </div>
+   </div>
+</div>
+
+}{
+
+<div class="game-action">
+
+   <form action="@routes.TutorialController.buyGarage" method="POST">
+      @helper.CSRF.formField
+      <button type="submit" class="btn btn-success">
+         @Messages("game.garage.buy")</button>
+   </form>
+
+</div>
+
+}

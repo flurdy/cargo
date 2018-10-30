@@ -1,0 +1,32 @@
+@(name: String = "player")(implicit request: RequestHeader, messages: Messages)
+
+@import helper._
+
+@templates.nauticalGameBulkhead() {
+
+   <h3>
+      @Messages("game.tutorial.job.start.header")
+   </h3>
+
+}{
+
+   <div class="game-talk">
+      <p>
+         @Messages("game.tutorial.job.start.description.1")
+         <br />
+         @Html(Messages("game.tutorial.job.start.description.2"))
+      </p>
+   </div>
+
+}{
+
+   <div class="game-action">
+
+      <form action="@routes.TutorialController.startJob" method="POST">
+         @helper.CSRF.formField
+         <button type="submit" class="btn btn-success">@Messages("game.job.freight.pickup")</button>
+      </form>
+
+   </div>
+
+}
