@@ -1,10 +1,9 @@
-@(title: Option[String] = None)(ship: Html)(implicit messages: Messages)
+@(title: Option[String] = None)(keel: Html)(implicit messages: Messages)
 
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <title>@Messages("application.title") @title.getOrElse("")</title>
-      <!-- <link rel="stylesheet" media="screen" href="/assets/lib/bootstrap/css/bootstrap.min.css"/> -->
       <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/superhero.min.css")"/>
       <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/cargo.css")"/>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Righteous" />
@@ -18,9 +17,36 @@
          <div class="nautical-structure" id="nautical-fleet">
             <div class="nautical-structure" id="nautical-regatta">
                <div class="nautical-structure" id="nautical-ship">
+                  <div class="nautical-structure" id="nautical-hull">
+                     <div class="nautical-structure" id="nautical-vaka">
+                        <div class="nautical-component" id="nautical-bow">
+                           <header>
+                              <h1><a href="/">Cargo</a></h1>
+                           </header>
+                        </div>
 
-                  @ship
+                        <div class="nautical-structure" id="nautical-keel">
 
+                           @keel
+
+                        </div>
+
+                        <div class="nautical-component" id="nautical-stern">
+                           <ul class="horizontal">
+                              <li id="github-logo">
+                                 <a href="https://github.com/flurdy/cargo">
+                                    <img alt="Github" title="Project site" src="@routes.Assets.versioned("images/GitHub-Mark-Light-32px.png")"/>
+                                 </a>
+                              </li>
+                              <li id="flurdy-logo">
+                                 <a href="https://flurdy.com">
+                                    <img alt="flurdy" src="@routes.Assets.versioned("images/flurdy_warped_dual_small.png")"/>
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>

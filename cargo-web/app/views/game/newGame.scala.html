@@ -1,8 +1,12 @@
-@(startingLocations: List[String])(implicit request: RequestHeader, messagesProvider: MessagesProvider, gameContext: GameContext)
+@(startingLocations: List[String])(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
 
 @import helper._
 
-@templates.nauticalGameBulkhead() {
+@templates.plainKeel() {
+
+   <h3>
+      @messages("game.new.header")
+   </h3>
 
 }{
 
@@ -12,13 +16,13 @@
 
          <div class="form-group col-sm-8">
             <label for="playername">
-               @messagesProvider.messages("game.new.player.name")</label>
+               @messages("game.new.player.name")</label>
             <input type="text" class="form-control" id="playername" name="playername" value="john smith" required />
          </div>
 
          <div class="form-group col-sm-8">
             <label for="companyname">
-               @messagesProvider.messages("game.new.company.name")</label>
+               @messages("game.new.company.name")</label>
             <input type="text" class="form-control" id="companyname" name="companyname" value="Trucks R'Us" required />
          </div>
 
@@ -29,7 +33,7 @@
 }{
    <div class="game-action">
 
-      <button type="submit" form="new-game" name="button" class="btn btn-success">@messagesProvider.messages("game.new.start")</button>
+      <button type="submit" form="new-game" name="button" class="btn btn-success">@messages("game.new.start")</button>
 
    </div>
 }

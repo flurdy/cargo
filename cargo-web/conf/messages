@@ -5,6 +5,7 @@ front.game.continue = Continue
 
 stern.project.link=Cargo project
 
+game.new.header = New game
 game.new.player.name = Your name
 game.new.company.name = Company name
 game.new.company.location = Headquarters location
