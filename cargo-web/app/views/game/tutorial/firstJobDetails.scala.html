@@ -1,4 +1,4 @@
-@(name: String = "player")(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
+@(jobOffer: JobDetails)(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
 
 @import helper._
 
@@ -18,19 +18,19 @@
          <div class="card-body">
             <dl class="row">
                <dt class="col-sm-5">@Messages("game.job.details.company")</dt>
-               <dd class="col-sm-6">Jonny Import Export PLC</dd>
+               <dd class="col-sm-6">@jobOffer.companyName</dd>
                <dt class="col-sm-5">@Messages("game.job.details.cargo")</dt>
-               <dd class="col-sm-6">Scrap metal</dd>
+               <dd class="col-sm-6">@jobOffer.freightType</dd>
                <dt class="col-sm-5">@Messages("game.job.details.pickup")</dt>
-               <dd class="col-sm-6">Cologne</dd>
+               <dd class="col-sm-6">@jobOffer.pickup</dd>
                <dt class="col-sm-5">@Messages("game.job.details.destination")</dt>
-               <dd class="col-sm-6">Frankfurt</dd>
+               <dd class="col-sm-6">@jobOffer.destination</dd>
                <dt class="col-sm-5">@Messages("game.job.details.routelength")</dt>
-               <dd class="col-sm-6">43.1km</dd>
+               <dd class="col-sm-6">@jobOffer.routeLength km</dd>
                <dt class="col-sm-5">@Messages("game.job.details.compensation")</dt>
-               <dd class="col-sm-6">€3.200</dd>
+               <dd class="col-sm-6">&euro; @jobOffer.compensation.formatted</dd>
                <dt class="col-sm-5">@Messages("game.job.details.deadline")</dt>
-               <dd class="col-sm-6">2 weeks</dd>
+               <dd class="col-sm-6">@jobOffer.deadline.week weeks</dd>
             </dl>
          </div>
       </div>

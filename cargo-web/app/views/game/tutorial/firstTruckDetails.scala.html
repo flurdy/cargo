@@ -1,4 +1,4 @@
-@(name: String = "player")(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
+@(truckOffered: TruckSaleDetails)(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
 
 @import helper._
 
@@ -18,23 +18,23 @@
       <div class="card-body">
          <dl class="row">
             <dt class="col-sm-5">@Messages("game.truck.details.make")</dt>
-            <dd class="col-sm-6">Scania Streamline</dd>
+            <dd class="col-sm-6">@truckOffered.truckDetails.make</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.chassis")</dt>
-            <dd class="col-sm-6">4x2 wheelset</dd>
+            <dd class="col-sm-6">@truckOffered.truckDetails.chassis</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.power")</dt>
-            <dd class="col-sm-6">440 hp</dd>
+            <dd class="col-sm-6">@truckOffered.truckDetails.power hp</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.steering")</dt>
-            <dd class="col-sm-6">Left hand</dd>
+            <dd class="col-sm-6">@Messages(s"game.truck.details.steering.${truckOffered.truckDetails.steering}")</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.age")</dt>
-            <dd class="col-sm-6">8 years</dd>
+            <dd class="col-sm-6">@truckOffered.truckDetails.age @Messages("game.truck.details.age.years")</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.mileage")</dt>
-            <dd class="col-sm-6">389,239 km</dd>
+            <dd class="col-sm-6">@truckOffered.truckDetails.mileage km</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.condition")</dt>
-            <dd class="col-sm-6">Ok</dd>
+            <dd class="col-sm-6">@Messages(s"game.truck.details.condition.${truckOffered.truckDetails.condition}")</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.cabin")</dt>
-            <dd class="col-sm-6">No</dd>
+            <dd class="col-sm-6">@Messages(s"game.truck.details.cabin.${truckOffered.truckDetails.hasCabin}")</dd>
             <dt class="col-sm-5">@Messages("game.truck.details.price")</dt>
-            <dd class="col-sm-6">€89,900</dd>
+            <dd class="col-sm-6">&euro; @truckOffered.price.formatted</dd>
          </dl>
       </div>
    </div>

@@ -7,6 +7,7 @@ import play.api.data.Forms._
 import play.api.i18n.{MessagesApi, I18nSupport}
 import play.api.mvc._
 import scala.concurrent.Future
+import models._
 
 
 @Singleton
@@ -23,7 +24,15 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showFirstJobDetails = Action { implicit request =>
-      Ok(views.html.game.tutorial.firstJobDetails())
+      val jobDetails: JobDetails = JobDetails(
+         "Jonny Import Export PLC",
+         "Scrap metal",
+         "Cologne",
+         "Frankfurt",
+         44,
+         new MoneyAmount("3200"),
+         GameDate(1985,8,3))
+      Ok(views.html.game.tutorial.firstJobDetails(jobDetails))
    }
 
    def takeFirstJob = Action { implicit request =>
@@ -36,7 +45,18 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showFirstTruckDetails = Action { implicit request =>
-      Ok(views.html.game.tutorial.firstTruckDetails())
+   val truck = TruckSaleDetails(
+      TruckDetails(
+         "Scania Streamline",
+         "4x2 wheelset",
+         440,
+         "left",
+         8,
+         389239,
+         "ok",
+         false ),
+      new MoneyAmount("89900"))
+      Ok(views.html.game.tutorial.firstTruckDetails(truck))
    }
 
    def cantAffordFirstTruck = Action { implicit request =>
@@ -48,7 +68,8 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showFirstBankLoanDetails = Action { implicit request =>
-      Ok(views.html.game.tutorial.firstBankLoanDetails())
+   val bankLoanOffer = BankLoanOffer(new MoneyAmount("100000"), new NumberAmount("3.4"), 36)
+      Ok(views.html.game.tutorial.firstBankLoanDetails(bankLoanOffer))
    }
 
    def takeOutFirstBankLoan = Action { implicit request =>
@@ -61,7 +82,18 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showFirstTruckDetailsAgain = Action { implicit request =>
-      Ok(views.html.game.tutorial.firstTruckDetailsAgain())
+      val truck = TruckSaleDetails(
+         TruckDetails(
+            "Scania Streamline",
+            "4x2 wheelset",
+            440,
+            "left",
+            8,
+            389239,
+            "ok",
+            false ),
+         new MoneyAmount("89900"))
+      Ok(views.html.game.tutorial.firstTruckDetailsAgain(truck))
    }
 
    def buyFirstTruck =  Action { implicit request =>
@@ -91,7 +123,16 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showJobDeliveredDetails = Action { implicit request =>
-      Ok(views.html.game.tutorial.jobDeliveredDetails())
+      val jobDetails: JobDetails = JobDetails(
+         "Jonny Import Export PLC",
+         "Scrap metal",
+         "Cologne",
+         "Frankfurt",
+         44,
+         new MoneyAmount("3200"),
+         GameDate(1985,8,3))
+      val jobDelivered = JobDelivered(jobDetails, 15, DeliveryExpenses(new MoneyAmount(-650), new MoneyAmount(-150)))
+      Ok(views.html.game.tutorial.jobDeliveredDetails(jobDelivered))
    }
 
    def invoiceJob = Action { implicit request =>
@@ -104,7 +145,9 @@ class TutorialController @Inject() (cc: ControllerComponents)
    }
 
    def showFirstGarageDetails = Action { implicit request =>
-      Ok(views.html.game.tutorial.firstGarageDetails())
+      val garage = GarageDetails("Franktfurt", 2)
+      val garageOffer = GarageSaleDetails( garage, new MoneyAmount(59300) )
+      Ok(views.html.game.tutorial.firstGarageDetails(garageOffer))
    }
 
    def buyGarage = Action { implicit request =>

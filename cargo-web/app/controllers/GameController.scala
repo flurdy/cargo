@@ -21,7 +21,8 @@ trait NewGameForm {
 trait IncludeGameContext {
 
    implicit def gameContext[A](implicit request: Request[A]): GameContext = {
-      val bankLoan = BankLoan(GameDate(1985,8,1), new MoneyAmount("-100000"), new MoneyAmount("-98783"))
+      val bankLoanOffer = BankLoanOffer(new MoneyAmount("100000"), new NumberAmount("3.4"), 24)
+      val bankLoan = BankLoan(GameDate(1985,8,1), bankLoanOffer, new MoneyAmount("-98783"))
       GameContext( GameDate(1985,8,1), CompanyContext("Trucks R'Us", new MoneyAmount("251120"), BankLoans(Set(bankLoan))))
    }
 

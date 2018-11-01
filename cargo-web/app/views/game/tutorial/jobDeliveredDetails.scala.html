@@ -1,4 +1,4 @@
-@(name: String = "player")(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
+@(jobDelivered: JobDelivered)(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
 
 @import helper._
 
@@ -19,23 +19,23 @@
       <div class="card-body">
          <dl class="row">
             <dt class="col-sm-5">@Messages("game.job.delivered.details.company")</dt>
-            <dd class="col-sm-6">Jonny Import Export PLC</dd>
+            <dd class="col-sm-6">@jobDelivered.jobDetails.companyName</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.cargo")</dt>
-            <dd class="col-sm-6">Scrap metal</dd>
+            <dd class="col-sm-6">@jobDelivered.jobDetails.freightType</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.destination")</dt>
-            <dd class="col-sm-6">Frankfurt</dd>
+            <dd class="col-sm-6">@jobDelivered.jobDetails.destination</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.routelength")</dt>
-            <dd class="col-sm-6">43.1km</dd>
+            <dd class="col-sm-6">@jobDelivered.jobDetails.routeLength km</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.time")</dt>
-            <dd class="col-sm-6">15 hours</dd>
+            <dd class="col-sm-6">@jobDelivered.timeTaken @Messages("game.job.delivered.details.time.hours")</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.invoice")</dt>
-            <dd class="col-sm-6">€3.200</dd>
+            <dd class="col-sm-6">&euro; @jobDelivered.jobDetails.compensation.formatted</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.expenses.fuel")</dt>
-            <dd class="col-sm-6">€-650</dd>
+            <dd class="col-sm-6">&euro; @jobDelivered.expenses.fuel.formatted</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.expenses.lodging")</dt>
-            <dd class="col-sm-6">€-150</dd>
+            <dd class="col-sm-6">&euro; @jobDelivered.expenses.lodging.formatted</dd>
             <dt class="col-sm-5">@Messages("game.job.delivered.details.balance")</dt>
-            <dd class="col-sm-6">€2,400</dd>
+            <dd class="col-sm-6">&euro; @jobDelivered.balance.formatted</dd>
          </dl>
       </div>
    </div>

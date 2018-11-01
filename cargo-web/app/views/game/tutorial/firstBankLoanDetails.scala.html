@@ -1,4 +1,4 @@
-@(name: String = "player")(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
+@(bankLoanOffered: BankLoanOffer)(implicit request: RequestHeader, messages: Messages, gameContext: GameContext)
 
 @import helper._
 
@@ -19,11 +19,11 @@
       <div class="card-body">
          <dl class="row">
             <dt class="col-sm-7">@Messages("game.bank.loan.amount")</dt>
-            <dd class="col-sm-4">€100,000</dd>
+            <dd class="col-sm-4">&euro; @bankLoanOffered.loanAmount.formatted</dd>
             <dt class="col-sm-7">@Messages("game.bank.loan.terms")</dt>
-            <dd class="col-sm-4">36 months</dd>
+            <dd class="col-sm-4">@bankLoanOffered.terms @Messages("game.bank.loan.terms.months")</dd>
             <dt class="col-sm-7">@Messages("game.bank.loan.repayment.monthly")</dt>
-            <dd class="col-sm-4">€2.564</dd>
+            <dd class="col-sm-4">&euro; @bankLoanOffered.repayments.formatted</dd>
          </dl>
       </div>
    </div>
