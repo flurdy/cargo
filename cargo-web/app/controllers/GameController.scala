@@ -6,8 +6,9 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.i18n.{MessagesApi, I18nSupport}
 import play.api.mvc._
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 import models._
+import repositories._
 
 trait NewGameForm {
    val newGameForm = Form(
@@ -29,7 +30,7 @@ trait IncludeGameContext {
 }
 
 @Singleton
-class GameController @Inject() (cc: ControllerComponents)
+class GameController @Inject() (cc: ControllerComponents)(implicit ec: ExecutionContext, repositoryRegistry: RepositoryRegistry)
   extends AbstractController(cc)  with I18nSupport with NewGameForm with WithLogging with IncludeGameContext {
 
    val startingLocations = List("hamburg","marseille","rotterdam")
@@ -38,22 +39,35 @@ class GameController @Inject() (cc: ControllerComponents)
       Ok(views.html.game.newGame(startingLocations))
    }
 
-   def submitNewGameDetails = Action { implicit request =>
+   def submitNewGameDetails = Action.async { implicit request =>
 
       newGameForm.bindFromRequest.fold(
          errors => {
             logger.warn("New game failed: " + errors)
-            BadRequest
+            Future.successful( BadRequest )
          },{
             case (playerName, companyName) =>
-               logger.warn("New game started")
-               Redirect(routes.GameController.showWelcome())
+               logger.info("New game started")
+               new Player(playerName).save.flatMap { player =>
+                  logger.debug(s"New player saved: ${player.playerId}")
+                  new Company(companyName, player).save.map { company =>
+                     logger.debug(s"New company saved: ${company.companyId} ${company.ownerId}")
+                     Redirect(routes.GameController.showWelcome())
+                  }
+               }
          }
       )
    }
 
-   def showWelcome = Action { implicit request =>
-      Ok(views.html.game.welcomePage())
+   def showWelcome = Action.async { implicit request =>
+      repositoryRegistry.companyRepository.get.findById(2).map {
+         case Some(company) =>
+            logger.debug(s"Found ${company.companyId}")
+         case _ =>
+            logger.debug(s"Found no company")
+      }.map { _ =>
+         Ok(views.html.game.welcomePage())
+      }
    }
 
    def startGame = Action { implicit request =>

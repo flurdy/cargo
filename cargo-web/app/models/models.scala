@@ -2,7 +2,8 @@ package models
 
 import java.text.NumberFormat
 import java.time.LocalDateTime
-
+import scala.concurrent.Future
+import repositories._
 
 case class GameDate(year: Int, month: Int, week: Int)
 
@@ -88,3 +89,15 @@ case class GarageSaleDetails(
    garageDetails: GarageDetails,
    price: MoneyAmount
 )
+
+case class Player(playerId: Option[Long], fullname: String){
+   def this(fullname: String) = this(None, fullname)
+   def save(implicit repositoryRegistry: RepositoryRegistry): Future[Player] =
+    repositoryRegistry.playerRepository.get.save(this)
+}
+
+case class Company(companyId: Option[Long], companyName: String, ownerId: Option[Long]){
+   def this(companyName: String, player: Player) = this(None, companyName, player.playerId)
+   def save(implicit repositoryRegistry: RepositoryRegistry): Future[Company] =
+      repositoryRegistry.companyRepository.get.save(this)
+}
